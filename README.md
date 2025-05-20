@@ -65,10 +65,10 @@ We only support The currently supported action images, see [available-images](ht
 
 | `version` | Ubuntu 22.04           | Ubuntu 24.04 |
 | --------- | ---------------------- | ------------ |
-| 9         | ❌                      | ❌            |
-| 10        | ❌                      | ❌            |
-| 11        | ❌                      | ❌            |
-| 12        | ❌                      | ❌            |
+| 9         | ✅                      | ✅            |
+| 10        | ✅                      | ✅            |
+| 11        | ✅                      | ✅            |
+| 12        | ✅                      | ✅            |
 | 13        | ✅                      | ✅            |
 | 14        | ❌ (use latest instead) | ✅            |
 | 15        | ❌                      | ❌            |
