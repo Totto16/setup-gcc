@@ -35,9 +35,9 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-22.04, ubuntu-24.04]
-        version: [9, 10, 11, 12, 13,14,15]
+        version: [9, 10, 11, 12, 13, 14, 15, "latest"]
         exclude:
-          - {os: ubuntu-22.04, version: 16} # TODO
+          - {os: ubuntu-22.04, version: 14} # TODO
     runs-on: '${{ matrix.os }}'
     name: 'Version: ${{ matrix.os }} / ${{ matrix.version }}'
     steps:

@@ -63,15 +63,15 @@ below.
 We only support The currently supported action images, see [available-images](https://github.com/actions/runner-images?tab=readme-ov-file#available-images)
 
 
-| `version` | Ubuntu 22.04 | Ubuntu 24.04 |
-| --------- | ------------ | ------------ |
-| 9         | TODO         |              |
-| 10        |              |              |
-| 11        |              |              |
-| 12        |              |              |
-| 13        |              |              |
-| 14        |              |              |
-| 15        |              |              |
+| `version` | Ubuntu 22.04           | Ubuntu 24.04 |
+| --------- | ---------------------- | ------------ |
+| 9         | ❌                      | ❌            |
+| 10        | ❌                      | ❌            |
+| 11        | ❌                      | ❌            |
+| 12        | ❌                      | ❌            |
+| 13        | ✅                      | ✅            |
+| 14        | ❌ (use latest instead) | ✅            |
+| 15        | ❌                      | ❌            |
 
 This table should be updated periodically; it's a work-in-progress.
 
