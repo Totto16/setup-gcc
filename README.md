@@ -1,7 +1,8 @@
-Set up GCC
-==========
+# Set up GCC
 
-[![Test](https://github.com/egor-tensin/setup-gcc/actions/workflows/test.yml/badge.svg)](https://github.com/egor-tensin/setup-gcc/actions/workflows/test.yml)
+[![Test](https://github.com/Totto16/setup-gcc/actions/workflows/test.yml/badge.svg)](https://github.com/Totto16/setup-gcc/actions/workflows/test.yml)
+
+Forked from [egor-tensin/setup-gcc/](https://github.com/egor-tensin/setup-gcc/)
 
 This GitHub action sets up GCC in your workflow run.
 
@@ -14,7 +15,7 @@ This GitHub action sets up GCC in your workflow run.
 Use it in your workflow like this:
 
     - name: Set up GCC
-      uses: egor-tensin/setup-gcc@v1
+      uses: Totto16/setup-gcc@v1
       with:
         version: latest
         platform: x64
@@ -30,29 +31,27 @@ Disable this by setting the `cc` parameter to `0`.
 
 [setup-cygwin]: https://github.com/egor-tensin/setup-cygwin
 
-API
----
+## API
 
-| Input     | Value   | Default | Description
-| --------- | ------- | ------- | -----------
-| version   | latest  | ✓       | Install the latest version available in the repository.
-|           | *any*   |         | Install a specific version if it's available (see below).
-| platform  | x64     | ✓       | Install the x86_64 toolchain.
-|           | *any*   |         | Install the i686 toolchain.
-| cygwin    | *any*   | ✓       | Install native binaries.
-|           | 1       |         | Install Cygwin packages.
-| cc        | 1       | ✓       | Set up `cc`/`gcc`/`c++`/`g++` executables.
-|           | *any*   |         | Don't set up the executables.
-| hardlinks | *any*   | ✓       | Cygwin: don't convert any symlinks.
-|           | 1       |         | Cygwin: convert symlinks in /usr/bin to hardlinks.
+| Input     | Value  | Default | Description                                               |
+| --------- | ------ | ------- | --------------------------------------------------------- |
+| version   | latest | ✓       | Install the latest version available in the repository.   |
+|           | *any*  |         | Install a specific version if it's available (see below). |
+| platform  | x64    | ✓       | Install the x86_64 toolchain.                             |
+|           | *any*  |         | Install the i686 toolchain.                               |
+| cygwin    | *any*  | ✓       | Install native binaries.                                  |
+|           | 1      |         | Install Cygwin packages.                                  |
+| cc        | 1      | ✓       | Set up `cc`/`gcc`/`c++`/`g++` executables.                |
+|           | *any*  |         | Don't set up the executables.                             |
+| hardlinks | *any*  | ✓       | Cygwin: don't convert any symlinks.                       |
+|           | 1      |         | Cygwin: convert symlinks in /usr/bin to hardlinks.        |
 
-Supported versions
-------------------
+### Supported versions
 
-Unless the `version` parameter value is "latest", the ubuntu-toolchain-r/test
+Unless the `version` parameter value is `"latest"`, the ubuntu-toolchain-r/test
 PPA is used to make more versions available.
-You can pass the version number as the `version` parameter value (`4.8`, `8`,
-`9`, etc.), and this action will install the corresponding packages.
+You can pass the version number as the `version` parameter value (`8`,
+`9`, `14`, etc.), and this action will install the corresponding packages.
 
 The `version` parameter value is not checked for being an available version for
 the current distribution.
@@ -61,25 +60,25 @@ distro's repositories & those in the PPA.
 For example, you can find the list of available versions as of January 2023
 below.
 
-| `version` | Bionic | Focal | Jammy
-| --------- | ------ | ----- | -----
-| 4.8       | ✓      |       |
-| 5         | ✓      |       |
-| 6         | ✓      |       |
-| 7         | ✓      | ✓     |
-| 8         | ✓      | ✓     |
-| 9         | ✓      | ✓     | ✓
-| 10        | ✓      | ✓     | ✓
-| 11        | ✓      | ✓     | ✓
-| 12        |        |       | ✓
-| 13        |        |       | ✓
+We only support The currently supported action images, see [available-images](https://github.com/actions/runner-images?tab=readme-ov-file#available-images)
+
+
+| `version` | Ubuntu 22.04 | Ubuntu 24.04 |
+| --------- | ------------ | ------------ |
+| 9         | TODO         |              |
+| 10        |              |              |
+| 11        |              |              |
+| 12        |              |              |
+| 13        |              |              |
+| 14        |              |              |
+| 15        |              |              |
 
 This table should be updated periodically; it's a work-in-progress.
 
 On Cygwin, the `version` parameter is ignored.
 
-License
--------
+## License
+
 
 Distributed under the MIT License.
 See [LICENSE.txt] for details.
