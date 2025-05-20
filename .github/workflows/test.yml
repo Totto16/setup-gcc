@@ -8,9 +8,11 @@ on:
     - cron: '45 5 * * 5'
   workflow_dispatch:
 
+
 jobs:
   ubuntu:
     strategy:
+      fail-fast: false
       matrix:
         platform: [x86, x64]
         os: [ubuntu-22.04, ubuntu-24.04]
@@ -33,11 +35,13 @@ jobs:
 
   versions:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-22.04, ubuntu-24.04]
         version: [9, 10, 11, 12, 13, 14, 15, "latest"]
         exclude:
-          - {os: ubuntu-22.04, version: 14} # TODO
+          - {os: ubuntu-22.04, version: 14}
+          - {os: ubuntu-24.04, version: 15}
     runs-on: '${{ matrix.os }}'
     name: 'Version: ${{ matrix.os }} / ${{ matrix.version }}'
     steps:
@@ -62,6 +66,7 @@ jobs:
 
   cygwin:
     strategy:
+      fail-fast: false
       matrix:
         hardlinks: [0, 1]
     runs-on: windows-latest
